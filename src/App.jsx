@@ -12,7 +12,7 @@ function App() {
   const fetchNotes = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/notes');
+      const response = await axios.get('https://notes-app-backend-orum.onrender.com/notes');
       setNotes(response.data);
     } catch (error) {
       console.error('Error fetching notes:', error);
@@ -25,7 +25,7 @@ function App() {
   const addNote = async (note) => {
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/notes', note);
+      await axios.post('https://notes-app-backend-orum.onrender.com/notes', note);
       fetchNotes(); // Refresh the list
     } catch (error) {
       console.error('Error adding note:', error);
@@ -38,7 +38,7 @@ function App() {
   const deleteNote = async (id) => {
     setLoading(true);
     try {
-      await axios.delete(`http://localhost:5000/notes/${id}`);
+      await axios.delete(`https://notes-app-backend-orum.onrender.com/notes/${id}`);
       fetchNotes(); // Refresh the list
     } catch (error) {
       console.error('Error deleting note:', error);
